@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Silk - Transform Your Hair</title>
+    <style>
+        body {
+            font-family: 'MONSERRAT', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f6f2;
+        }
+
+        .hero-section {
+            background: url("background.jpg") no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            padding: 100px 20px;
+          }
+          
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            background-color: #b8860b;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background-color: #a67a08;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        .benefits {
+            padding: 5rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+        .benefits-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .benefit-card {
+            flex: 1;
+            min-width: 250px;
+            margin: 1rem;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .benefit-card h3 {
+            color: #b8860b;
+            margin-bottom: 1rem;
+        }
+        .testimonials {
+            background-color: #f2f2f2;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .testimonials h2 {
+            margin-bottom: 3rem;
+        }
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            text-align: left;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            float: left;
+            margin-right: 1rem;
+        }
+        .testimonial-text {
+            font-style: italic;
+        }
+        .customer-name {
+            color: #b8860b;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        .before-after {
+            padding: 5rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+        .image-comparison {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .comparison-image {
+            flex: 1;
+            min-width: 300px;
+            margin: 1rem;
+        }
+        .comparison-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .limited-offer {
+            background-color: #f9f1e1;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .limited-offer h2 {
+            color: #c9470e;
+        }
+        .timer {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0 2rem;
+            color: #c9470e;
+        }
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 3rem 2rem;
+        }
+        .guarantee-content {
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+        }
+        .guarantee img {
+            width: 120px;
+            margin-right: 2rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .product-section {
+            padding: 5rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+        .product-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            margin: 1rem;
+        }
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+            padding: 2rem;
+        }
+        .price {
+            font-size: 2.5rem;
+            color: #b8860b;
+            margin: 1rem 0;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 0.5rem;
+        }
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+        .quantity-selector button {
+            width: 40px;
+            height: 40px;
+            background-color: #eee;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .quantity-selector input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #eee;
+            margin: 0 0.5rem;
+        }
+        /* Added styles for cart notification */
+        .cart-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cart notification -->
+    <div id="cartNotification" class="cart-notification">
+        Product added to cart!
+    </div>
+
+    <section class="hero-section">
+        <h1>Soul Silk Hair Serum</h1>
+        <p>Experience the transformation: From damaged to silky smooth hair in just 7 days</p>
+        <button class="cta-button" onclick="scrollToProduct()">Transform Your Hair Now</button>
+        <!-- Example image -->
+    
+    </section>
+
+    <section class="benefits">
+        <h2>Why Over 10,000 New Zealand Women Trust Soul Silk</h2>
+        <div class="benefits-container">
+            <div class="benefit-card">
+                <h3>Instant Repair</h3>
+                <p>Real silk proteins penetrate deep into hair shafts, repairing damage from the inside out.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Frizz-Free Guarantee</h3>
+                <p>Our unique formula creates a protective barrier that locks in moisture and eliminates frizz.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Natural Shine</h3>
+                <p>Restore your hair's natural luster without greasy or heavy residue.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h2>Real Results You Can See</h2>
+        <div class="image-comparison">
+            <div class="comparison-image">
+                <img src="before.jpg" alt="Before using Soul Silk">
+                <p>Before Soul Silk</p>
+            </div>
+            <div class="comparison-image">
+                <img src="afterserum.jpg" alt="After using Soul Silk">
+                <p>After 7 Days of Soul Silk</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Loved by New Zealanders</h2>
+        <div class="testimonial-card">
+            <img src="a4asv9am.png" alt="Customer">
+            <p class="testimonial-text">"After trying countless products for my damaged hair, Soul Silk was the only one that actually delivered results. My hair is now softer and shinier than it's been in years!"</p>
+            <p class="customer-name">— Sarah from Auckland</p>
+        </div>
+        <div class="testimonial-card">
+            <img src="rle30lyc.png" alt="Customer">
+            <p class="testimonial-text">"Living in Wellington, the wind wreaks havoc on my hair. Soul Silk has been my savior! No more frizz, even on the windiest days!"</p>
+            <p class="customer-name">— Emma from Wellington</p>
+        </div>
+    </section>
+
+    <section id="product" class="product-section">
+        <h2>Soul Silk Hair Serum</h2>
+        <div class="product-display">
+            <div class="product-image">
+                <img src="serumfotoshop.jpg" alt="Soul Silk Hair Serum bottle"style="width: 100%; height: auto;">
+            </div>
+            <div class="product-details">
+                <h3>Premium Hair Transformation Serum</h3>
+                <p>Our exclusive formula combines real silk proteins with natural oils to repair, protect, and transform your hair.</p>
+                <p class="price"><span class="original-price">$69.99</span> $49.99</p>
+                <p>✓ Free shipping in New Zealand</p>
+                <p>✓ 30-day satisfaction guarantee</p>
+                
+                <div class="quantity-selector">
+                    <button onclick="decreaseQuantity()">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button onclick="increaseQuantity()">+</button>
+                </div>
+                
+                <button class="cta-button" onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="limited-offer">
+        <h2>Limited Time Offer</h2>
+        <p>This special price ends soon. Don't miss out!</p>
+        <div class="timer" id="countdown">23:59:59</div>
+        <button class="cta-button" onclick="buyNow()">Claim Your Discount Now</button>
+    </section>
+
+    <section class="guarantee">
+        <div class="guarantee-content">
+            <img src="/api/placeholder/120/120" alt="Guarantee seal">
+            <div>
+                <h3>Our 30-Day Satisfaction Guarantee</h3>
+                <p>If you don't see noticeable improvements in your hair's texture, shine, and manageability within 30 days, we'll refund your purchase. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Soul Silk. All rights reserved.</p>
+        <p>Contact: support@soulsilk.co.nz | Privacy Policy | Terms of Service</p>
+    </footer>
+
+    <script>
+        // Product details
+        const product = {
+            id: "soul-silk-serum", 
+            name: "Soul Silk Hair Serum",
+            price: 49.99,
+            originalPrice: 69.99,
+            image: "/api/placeholder/500/500"
+        };
+        
+        function scrollToProduct() {
+            document.getElementById('product').scrollIntoView({behavior: 'smooth'});
+        }
+        
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        }
+        
+        function increaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+        
+        function addToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            
+            // 1. Create cart object if it doesn't exist
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // 2. Check if product is already in cart
+            const existingProductIndex = cart.findIndex(item => item.id === product.id);
+            
+            if (existingProductIndex > -1) {
+                // Update quantity if product exists
+                cart[existingProductIndex].quantity += quantity;
+            } else {
+                // Add new product to cart
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: quantity
+                });
+            }
+            
+            // 3. Save updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // 4. Show notification
+            showCartNotification();
+            
+            // 5. If you want to redirect to cart page, uncomment the next line
+            // window.location.href = "https://yourwebsite.com/cart";
+        }
+        
+        function buyNow() {
+            // Add to cart first
+            addToCart();
+            
+            // Then redirect directly to checkout
+            window.location.href = "https://yourwebsite.com/checkout";
+        }
+        
+        function showCartNotification() {
+            const notification = document.getElementById('cartNotification');
+            notification.style.display = 'block';
+            
+            // Hide notification after 3 seconds
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Simple countdown timer
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let hours = 23;
+            let minutes = 59;
+            let seconds = 59;
+            
+            setInterval(function() {
+                seconds--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                }
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                }
+                if (hours < 0) {
+                    hours = 23;
+                }
+                
+                countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+        
+        startCountdown();
+    </script>
+</body>
+</html>
